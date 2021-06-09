@@ -22,7 +22,7 @@ namespace Mediator.Domain.Handler
 
         public async Task<string> Handle(ProdutoCreateCommand request, CancellationToken cancellationToken)
         {
-            var produto = new Produto { Nome = request.Nome, Preco = request.Preco };
+            var produto = new Produto { Id = request.Id, Nome = request.Nome, Preco = request.Preco };
 
             try
             {

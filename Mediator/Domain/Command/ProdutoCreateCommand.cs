@@ -4,7 +4,8 @@ namespace Mediator.Domain.Command
 {
     public class ProdutoCreateCommand : IRequest<string>
     {
-        public string Nome { get; private set; }
-        public decimal Preco { get; private set; }
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public decimal Preco { get; set; }
     }
 }

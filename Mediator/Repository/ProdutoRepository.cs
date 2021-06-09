@@ -9,6 +9,19 @@ namespace Mediator.Repository
     {
         private static Dictionary<int, Produto> produtos = new Dictionary<int, Produto>();
 
+        public Dictionary<int, Produto> GetProdutos()
+        {
+            produtos.Add(1, new Produto { Id = 1, Nome = "Caneta", Preco = 3.45m });
+            produtos.Add(2, new Produto { Id = 2, Nome = "Caderno", Preco = 7.65m });
+            produtos.Add(3, new Produto { Id = 3, Nome = "Borracha", Preco = 1.20m });
+            return produtos;
+        }
+
+        public ProdutoRepository()
+        {
+            produtos = GetProdutos();
+        }
+
         public async Task Add(Produto produto)
         {
             await Task.Run(() => produtos.Add(produto.Id, produto));
